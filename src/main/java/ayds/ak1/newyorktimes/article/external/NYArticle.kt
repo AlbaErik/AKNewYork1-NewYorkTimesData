@@ -10,8 +10,8 @@ interface Card {
 
 data class NYArticleCard(
     override val description: String,
-    override val artistName:String,
     override val infoURL: String,
+    override val artistName:String,
     override val source: String,
     override var sourceLogoUrl: String
 ) : Card
