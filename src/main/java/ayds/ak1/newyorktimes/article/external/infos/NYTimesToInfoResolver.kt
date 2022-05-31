@@ -12,7 +12,7 @@ private const val RESPONSE = "response"
 private const val DOCS = "docs"
 private const val ABSTRACT = "abstract"
 private const val WEB_URL = "web_url"
-private const val SourceLogoURL="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/NYC_Montage_2014_4_-_Jleon.jpg/456px-NYC_Montage_2014_4_-_Jleon.jpg"
+private const val URL_OF_NYTIMES_LOGO="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/NYC_Montage_2014_4_-_Jleon.jpg/456px-NYC_Montage_2014_4_-_Jleon.jpg"
 
 internal class JsonToInfoResolver : NYTimesToInfoResolver {
 
@@ -26,8 +26,7 @@ internal class JsonToInfoResolver : NYTimesToInfoResolver {
                     item.getArtistInformation(),
                     item.getUrl(),
                     artistName,
-                    "NYArticle",
-                    SourceLogoURL
+                    URL_OF_NYTIMES_LOGO
                 )
             }
         } catch (e: Exception) {
