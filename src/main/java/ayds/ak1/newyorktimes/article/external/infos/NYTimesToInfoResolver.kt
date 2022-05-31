@@ -2,10 +2,10 @@ package ayds.ak1.newyorktimes.article.external.infos
 
 import com.google.gson.Gson
 import com.google.gson.JsonObject
-import ayds.ak1.newyorktimes.article.external.NYArticleCard
+import ayds.ak1.newyorktimes.article.external.NYArticle
 
 interface NYTimesToInfoResolver {
-    fun getArtistInfoFromExternalData(serviceData: String?, artistName: String): NYArticleCard?
+    fun getArtistInfoFromExternalData(serviceData: String?, artistName: String): NYArticle?
 }
 
 private const val RESPONSE = "response"
@@ -19,10 +19,10 @@ internal class JsonToInfoResolver : NYTimesToInfoResolver {
     override fun getArtistInfoFromExternalData(
         serviceData: String?,
         artistName: String
-    ): NYArticleCard? =
+    ): NYArticle? =
         try {
             serviceData?.getResponse()?.let { item ->
-                NYArticleCard(
+                NYArticle(
                     item.getArtistInformation(),
                     item.getUrl(),
                     artistName,
